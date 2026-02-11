@@ -1,25 +1,20 @@
 #include <iostream>
-#include <list>
+#include <queue>
 using namespace std;
 
 int main() {
 
-	list<int> l;
-	l.resize(10);
-	l.push_front(2);
-	for (auto& it : l) {
-		cout << it;
+	queue<int> q;
+	q.push(1);
+	for (int i = 2; i < 10; i++) {
+		q.push(i);
 	}
-	cout << endl;
-	l.push_back(5);
-	for (auto& it : l) {
-		cout << it;
+
+	while (!q.empty()) {
+		cout << q.front() << endl;
+		q.pop();
 	}
-	cout << endl;
-	l.push_front(3);
-	for (auto& it : l) {
-		cout << it;
-	}
+	
 
 	return 0;
 }
